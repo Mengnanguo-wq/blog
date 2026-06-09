@@ -1,0 +1,52 @@
+# ===== Cola 主题配置 =====
+
+# 左侧栏名字
+author_name: 郭福林
+
+# 左侧栏标签（只能两个）
+tag1: Java
+tag2: AI/Agent
+
+# 左侧栏 GitHub 链接
+github_url: https://github.com/Mengnanguo-wq
+
+# 左侧栏座右铭，分两句
+motto_prev: "知行合一"
+motto_last: "学无止境"
+
+# 小站部署日期
+public_date: 2026-06-09
+
+# 左侧栏菜单
+menu:
+  - [小站首页, '/', 'icon-shouye']
+  - [个人日志, '/log', 'icon-rizhi']
+  - [友情链接, '/link', 'icon-youqinglianjie']
+  - ['关于自己', '/about', 'icon-guanyuwomen']
+  - ['我的工具', '/tools', 'icon-gongju']
+
+# 友情链接
+links:
+ - ['https://jianli-bos.pages.dev', '简历网站', 'https://jianli-bos.pages.dev']
+
+# 右侧栏公告
+notice: 欢迎来到我的博客～ 技术分享与生活记录 🎉
+
+# 右侧音乐列表（清空以避免加载外部资源）
+musics: []
+
+# 右侧栏网站信息
+copyright:
+
+# 是否开启文章评论 Valine
+comments:
+  enable: false
+
+# 纪念模式
+gray: none
+
+# 日志篇幅超过1000字后隐藏
+log_text_num: 1000
+
+# 版本号
+version: 1.0.0

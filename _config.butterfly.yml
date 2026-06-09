@@ -1,0 +1,67 @@
+# Butterfly 主题配置
+
+# 导航栏
+nav:
+  logo:
+  display_title: true
+  fixed: true
+
+# 首页封面图
+disable_top_img: false
+index_img: https://source.unsplash.com/random/1600x900?code
+default_cover: https://source.unsplash.com/random/800x600?minimal
+
+# 博客信息
+avatar:
+  img: /img/avatar.png
+  effect: true
+
+social:
+  github: https://github.com/Mengnanguo-wq || fab fa-github
+  email: mailto:18603852358@163.com || fas fa-envelope
+
+# 文章分类
+category_ui:
+  layout: 0 # 0: 默认, 1: 磁贴, 2: 卡片
+
+# 代码块
+highlight_theme: mac
+highlight_copy: true
+
+# 字体
+font:
+  global-font-size: 16px
+  code-font-size: 14px
+
+# 侧栏
+aside:
+  enable: true
+  position: right
+  card_author:
+    enable: true
+    description: Java / Agent Engineer
+  card_announcement:
+    enable: true
+    content: 欢迎来到我的博客 🎉
+  card_recent_post:
+    enable: true
+    limit: 5
+  card_categories:
+    enable: true
+    limit: 8
+  card_tags:
+    enable: true
+    limit: 40
+
+# 页脚
+footer:
+  owner:
+    enable: true
+    since: 2026
+  custom_text:
+  copyright: true
+
+# 评论
+comments:
+  use:
+  - # Valine / Twikoo / Giscus 等评论系统
