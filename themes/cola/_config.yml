@@ -1,0 +1,68 @@
+title: 我的技术与生活——可乐的小站
+# 左侧栏名字
+author_name: Cola.
+
+# 左侧栏标签，只能两个
+tag1: 中二
+tag2: 宅
+
+# 左侧栏Github连接
+github_url: https://github.com/Aizener
+
+# 左侧栏座右铭，分两句
+motto_prev: “花有重开日，人无再少年”
+motto_last: “一个简单普通的男孩”
+
+# 小站部署日期（运营时间）
+public_date: 2022-02-16
+
+# 左侧栏菜单
+menu:
+  - [小站首页, '/', 'icon-shouye']
+  - [个人日志, '/log', 'icon-rizhi']
+  - [友情链接, '/link', 'icon-youqinglianjie']
+  - ['关于自己', '/about', 'icon-guanyuwomen']
+  - ['我的工具', '/tools', 'icon-gongju']
+
+# 友情连接：头像、名字、链接
+links:
+ - ['https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg', 'Hexo.', 'https://hexo.io/zh-cn/']
+
+# 右侧栏公告
+notice: Hello~大噶好。唔系可乐爱宅着，欢迎你们来到我的博客小站，希望能在这里收获到有用的东西哦！
+
+# 右侧音乐列表：歌名、作者、链接、封面
+musics: []
+
+# 个人介绍
+likes:
+  - 姓名：郭福林
+  - 职业：Java / Agent Engineer
+  - 爱好：编程，技术研究
+
+# 工具配置
+tools: []
+
+# 右侧栏网站信息
+copyright: 蜀ICP备2022005384号-1
+
+
+# 是否开启文章评论 Valine:https://valine.js.org/configuration.htm
+comments:
+  enable: true
+  appId: 'Pf8zCXGEH1qsprnWfikVVujL-gzGzoHsz'
+  appKey: 'qOqoiUHhH1TGtLRUYURkLRQX'
+  placeholder: '请留下你宝贵的意见吧~'
+  meta: ['nick']
+  recordIP: true
+  visitor: true
+  enableQQ: true
+
+# 纪念模式 none: 不设置 all：全部置灰 index: 首页置灰
+gray: none
+
+# 日志篇幅超过1000字后隐藏（最大高度为1000px)，1000可为任意数值
+log_text_num: 1000
+
+# 版本号
+version: 1.0.2
