@@ -213,6 +213,12 @@
       setGrayStyle()
       checkAndSetArticlePageLayout()
     })
+    $(document).on('pjax:error', function(e, xhr, opts) {
+      // pjax 失败时降级为整页跳转
+      if (opts && opts.url) {
+        window.location.href = opts.url
+      }
+    })
     $(document).on('pjax:popstate', function() {
       status = -1
       checkAndSetArticlePageLayout()
