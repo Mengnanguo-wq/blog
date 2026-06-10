@@ -92,22 +92,36 @@
 <% } %>
 
 <script>
-  $(document).on('pjax:complete', function() {
+  function initTocScroll() {
     const tocs = document.querySelector('.toc')
-    const links = tocs ? tocs.querySelectorAll('a') : []
+    if (!tocs) return
+    const links = tocs.querySelectorAll('a')
     links.forEach(link => {
-      link.addEventListener('click', e => {
-        const href = decodeURIComponent(e.href)
-        href.search(/#(.*)/)
-        const id = RegExp.$1
-        const target = document.querySelector('#' + id)
-        const top = target.offsetTop
-        document.documentElement.scrollTo({
-          top: top - 100,
-          behavior: 'smooth'
-        })
-        e.preventDefault()
-      })
+      // 移除旧事件避免 pjax 重复绑定
+      link.removeEventListener('click', tocClickHandler)
+      link.addEventListener('click', tocClickHandler)
     })
-  })
+  }
+
+  function tocClickHandler(e) {
+    e.preventDefault()
+    e.stopPropagation()  // 阻止 pjax 拦截
+    const rawHref = e.currentTarget.getAttribute('href')  // 如 "#编程辅助"
+    if (!rawHref) return
+    const id = rawHref.replace('#', '')
+    // 对中文等特殊字符做 URI 解码
+    const decodedId = decodeURIComponent(id)
+    const target = document.getElementById(decodedId)
+    if (!target) return
+    const top = target.getBoundingClientRect().top + window.scrollY
+    window.scrollTo({
+      top: top - 80,
+      behavior: 'smooth'
+    })
+  }
+
+  // 首次加载时绑定
+  initTocScroll()
+  // pjax 跳转后重新绑定
+  $(document).on('pjax:complete', initTocScroll)
 </script>
