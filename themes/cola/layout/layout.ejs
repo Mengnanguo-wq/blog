@@ -180,7 +180,7 @@
       checkAndSetArticlePageLayout()
       setTimeout(() => {
         $('#load').slideUp()
-        $('#container').slideToggle()
+        $('#container').slideDown()
         setTimeout(() => {
           initScroll();
         }, 500)
@@ -191,7 +191,7 @@
     setTimeout(() => {
       if ($('#load').is(':visible')) {
         $('#load').slideUp()
-        $('#container').slideToggle()
+        $('#container').slideDown()
       }
     }, 3000)
     
