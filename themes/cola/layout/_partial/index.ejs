@@ -21,7 +21,7 @@
           <img class="index-article--cover" data-cover="<%- post.cover || 'imgs/default-cover.webp' %>" alt="<%- post.title %>" />
         </div>
         <div class="index-article--content">
-          <a class="post-link" href="<%- url_for(post.path) %>"><%- post.title %> </a>
+          <a href="<%- url_for(post.path) %>"><%- post.title %> </a>
           <div>
             <% if (post.categories.length > 0) { %>
               <p>
@@ -54,7 +54,7 @@
           <img class="index-article--cover" data-cover="<%- post.cover || 'imgs/default-cover.webp' %>" alt="<%- post.title %>" />
         </div>
         <div class="index-article--content">
-          <a class="post-link" href="<%- url_for(post.path) %>"><%- post.title %> </a>
+          <a href="<%- url_for(post.path) %>"><%- post.title %> </a>
           <div>
             <% if (post.categories.length > 0) { %>
               <p>
