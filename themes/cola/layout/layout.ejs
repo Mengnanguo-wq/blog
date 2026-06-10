@@ -198,8 +198,8 @@
     let status = 0
     // 对所有链接跳转事件绑定pjax容器container
     // 排除 .toc-link(目录跳转)、.category-link(分类)、.tag-link(标签)、
-    // .post-category(列表页分类)、.headerlink(标题锚点) — 这些直接用浏览器原生跳转
-    $(document).pjax('a[target!=_blank]:not(.toc-link):not(.category-link):not(.tag-link):not(.post-category):not(.headerlink)', '#main-container', {
+    // .post-category(列表页分类)、.headerlink(标题锚点)、.post-link(文章标题链接) — 这些直接用浏览器原生跳转
+    $(document).pjax('a[target!=_blank]:not(.toc-link):not(.category-link):not(.tag-link):not(.post-category):not(.headerlink):not(.post-link)', '#main-container', {
       container: '#main-container',
       fragment: '#main-container',
       timeout: 8000
