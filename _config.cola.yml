@@ -32,8 +32,14 @@ links:
 # 右侧栏公告
 notice: 欢迎来到我的博客～ 技术分享与生活记录 🎉
 
-# 右侧音乐列表（清空以避免加载外部资源）
-musics: []
+# 网易云音乐歌单ID（留空则使用下方静态歌单）
+netease_playlist_id:
+
+# 右侧音乐列表：歌名、作者、音乐文件路径、封面路径（留空自动使用默认封面）
+musics:
+  - ['Daylight', '歌手未知', '/music/Daylight.m4a']
+  - ['那年', '任然', '/music/那年-任然.m4a']
+  - ['歃血', 'ZmjjKK', '/music/歃血.m4a']
 
 # 右侧栏网站信息
 copyright:

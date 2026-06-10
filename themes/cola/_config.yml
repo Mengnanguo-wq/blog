@@ -34,6 +34,9 @@ notice: Hello~大噶好。唔系可乐爱宅着，欢迎你们来到我的博客
 # 右侧音乐列表：歌名、作者、链接、封面
 musics: []
 
+# 网易云音乐歌单ID（填写后优先播放网易云歌单，musics 作为后备）
+netease_playlist_id:
+
 # 个人介绍
 likes:
   - 姓名：郭福林

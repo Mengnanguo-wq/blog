@@ -32,14 +32,6 @@
     <p class="main-right--refer"><a href="https://beian.miit.gov.cn/#/Integrated/index"><%- theme.copyright %></a> </p>
   </div>
 </div>
-<%
-  const musics = theme.musics.map(item => ({
-    name: item[0],
-    artist: item[1],
-    url: item[2],
-    cover: url_for(item[3]),
-  }))
-%>
 <script>
   function setOperateItem () {
     const reg = /\d{4}\/\d{2}\/\d{2}\/.+/
@@ -64,11 +56,57 @@
   }
 
   setOperateItem()
-  const musics = JSON.parse(`<%- JSON.stringify(musics) %>`)
-  const ap = new APlayer({
-    container: document.querySelector('#aplayer'),
-    audio: musics,
-  })
+
+  // ===== 音乐播放器 =====
+  // 优先使用网易云歌单（通过 Meting API 获取），后备使用静态配置的 musics
+  <%
+    const neteaseId = theme.netease_playlist_id || ''
+    const hasStaticMusics = theme.musics && theme.musics.length > 0
+  %>
+
+  const neteaseId = '<%= neteaseId %>'
+
+  if (neteaseId) {
+    // 网易云音乐模式：通过 Meting API 获取歌单
+    const metingApi = 'https://api.injahow.cn/meting/'
+    const url = metingApi + '?server=netease&type=playlist&id=' + neteaseId
+
+    // 显示加载状态
+    const playerEl = document.querySelector('#aplayer')
+    playerEl.innerHTML = '<div style="padding:20px;text-align:center;color:#999;font-size:13px">🎵 加载歌单中...</div>'
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        if (!data || !data.length) throw new Error('歌单为空')
+        new APlayer({
+          container: playerEl,
+          audio: data.map(song => ({
+            name: song.name,
+            artist: song.artist,
+            url: song.url,
+            cover: song.pic,
+            lrc: song.lrc
+          })),
+          autoplay: true,
+        })
+      })
+      .catch(err => {
+        console.error('🎵 网易云加载失败:', err)
+        playerEl.innerHTML = '<div style="padding:20px;text-align:center;color:#999;font-size:13px">🎵 音乐加载失败，<a style="color:#666;text-decoration:underline;cursor:pointer" onclick="location.reload()">点击重试</a></div>'
+      })
+  }
+  <% if (hasStaticMusics) { %>
+  else {
+    // 静态音乐模式：使用配置中的 musics 列表
+    const staticMusics = <%- JSON.stringify(theme.musics.map(function(m) { return {name: m[0], artist: m[1], url: m[2], cover: m[3]} })) %>
+    new APlayer({
+      container: document.querySelector('#aplayer'),
+      audio: staticMusics,
+      autoplay: true,
+    })
+  }
+  <% } %>
 
   $(document).on('pjax:complete', function() {
     setOperateItem()
