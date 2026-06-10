@@ -50,7 +50,7 @@ npm install -g opencode-ai
 
 工作效率比 OpenCode 高，日常写大项目用它很快，效果也很好。缺点是国外的大模型太贵了——我自己外接的 deepseek-v4 大模型。
 
-**费用参考：** deepseek-v4-pro 曾写项目聊了两小时花了 20 元，而 deepseek-v4-pro 的价格是 flash 的 4 倍。
+**费用参考：** deepseek-v4-pro 也是有点贵的，曾写项目，用它聊了两个小时花了 15 元，deepseek-v4-pro 的价格是 flash 的 4 倍。
 
 ### 安装命令
 
