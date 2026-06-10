@@ -194,6 +194,14 @@
         $('#container').slideDown()
       }
     }, 3000)
+
+    // 终极兜底：5秒后用原生 JS 强制显示内容（不依赖 jQuery，防止任何意外导致白屏）
+    setTimeout(function() {
+      var load = document.getElementById('load');
+      var container = document.getElementById('container');
+      if (load) load.style.display = 'none';
+      if (container) container.style.display = '';
+    }, 5000);
     
     let status = 0
     // 对所有链接跳转事件绑定pjax容器container
