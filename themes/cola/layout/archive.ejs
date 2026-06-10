@@ -32,7 +32,7 @@
                                     <% archives[year][month].forEach(post => { %>
                                         <li class="archive-list__post">
                                             <div>
-                                                <a href="/<%- post.path %>"><%- post.title %></a>
+                                                <a class="post-link" href="/<%- post.path %>"><%- post.title %></a>
                                                 <span><%- month %>月<%- post.date %>日</span>
                                             </div>
                                         </li>
