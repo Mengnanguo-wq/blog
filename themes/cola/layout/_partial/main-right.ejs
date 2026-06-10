@@ -88,7 +88,7 @@
             cover: song.pic,
             lrc: song.lrc
           })),
-          autoplay: true,
+          autoplay: false,
         })
       })
       .catch(err => {
@@ -103,7 +103,7 @@
     new APlayer({
       container: document.querySelector('#aplayer'),
       audio: staticMusics,
-      autoplay: true,
+      autoplay: false,
     })
   }
   <% } %>
